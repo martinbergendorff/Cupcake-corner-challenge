@@ -10,38 +10,39 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var order = Order()
+    @ObservedObject var wrappedOrder = WrappedOrder()
     
     var body: some View {
         
         NavigationView {
             Form {
                 Section {
-                    Picker("Select type of cupcake", selection: $order.type) {
+                    Picker("Select type of cupcake", selection: $wrappedOrder.order.type) {
                         ForEach(Order.types.indices) {i in
                             Text(Order.types[i]) // $0
                         }
                     }
                 }
+                
                 Section {
-                    Stepper("Select quantity: \(order.quantity)", value: $order.quantity, in: 3...20)
+                    Stepper("Select quantity: \(wrappedOrder.order.quantity)", value: $wrappedOrder.order.quantity, in: 3...20)
                 }
                 
                 Section {
-                    Toggle("Special requests", isOn: $order.specialRequest.animation())
+                    Toggle("Special requests", isOn: $wrappedOrder.order.specialRequest.animation())
                     
-                    if order.specialRequest {
-                        Toggle("Extra frosting", isOn: $order.extraFrosting)
-                        Toggle("Extra sprinkles", isOn: $order.sprinkles)
+                    if wrappedOrder.order.specialRequest {
+                        Toggle("Extra frosting", isOn:  $wrappedOrder.order.extraFrosting)
+                        Toggle("Extra sprinkles", isOn: $wrappedOrder.order.sprinkles)
    
                     }
                 }
                 
                 Section {
                     NavigationLink("Delivery details") {
-                        AddressView(order: order)
+                        AddressView(wrappedOrder: wrappedOrder)
                     }
-                }
+                }   
             }
             .navigationTitle("Cupcake Corner")
         } 

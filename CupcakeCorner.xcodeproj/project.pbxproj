@@ -15,6 +15,7 @@
 		3942946C27FE06E3007A36CF /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942946B27FE06E3007A36CF /* AddressView.swift */; };
 		3942946E27FF622B007A36CF /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942946D27FF622B007A36CF /* CheckOutView.swift */; };
 		394294702801F930007A36CF /* CodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942946F2801F930007A36CF /* CodingKeys.swift */; };
+		3942947828107B0C007A36CF /* WrappedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942947728107B0C007A36CF /* WrappedOrder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3942946B27FE06E3007A36CF /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		3942946D27FF622B007A36CF /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		3942946F2801F930007A36CF /* CodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingKeys.swift; sourceTree = "<group>"; };
+		3942947728107B0C007A36CF /* WrappedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedOrder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				3942946F2801F930007A36CF /* CodingKeys.swift */,
 				39338C6427EB9CC000AE81A9 /* CupcakeCornerApp.swift */,
 				39338C6627EB9CC000AE81A9 /* ContentView.swift */,
+				3942947728107B0C007A36CF /* WrappedOrder.swift */,
 				3942946927FE002E007A36CF /* Order.swift */,
 				3942946B27FE06E3007A36CF /* AddressView.swift */,
 				3942946D27FF622B007A36CF /* CheckOutView.swift */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3942946A27FE002E007A36CF /* Order.swift in Sources */,
+				3942947828107B0C007A36CF /* WrappedOrder.swift in Sources */,
 				3942946E27FF622B007A36CF /* CheckOutView.swift in Sources */,
 				3942946C27FE06E3007A36CF /* AddressView.swift in Sources */,
 				39338C6727EB9CC000AE81A9 /* ContentView.swift in Sources */,

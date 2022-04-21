@@ -9,35 +9,36 @@ import SwiftUI
 
 struct AddressView: View {
     
-    @ObservedObject var order : Order
-    
-    //@State private var name = ""
+    @ObservedObject var wrappedOrder : WrappedOrder
     
     var body: some View {
         
         Form {
             Section {
-                TextField("Name", text: $order.name)
-                TextField("Street", text:  $order.street)
-                TextField("City", text: $order.city)
-                TextField("Zip", text: $order.zip)
+                TextField("Name", text: $wrappedOrder.order.name)
+                TextField("Street", text:  $wrappedOrder.order.street)
+                TextField("City", text: $wrappedOrder.order.city)
+                TextField("Zip", text: $wrappedOrder.order.zip)
             }
             
             Section {
                 NavigationLink("Check out") {
-                    CheckOutView(order: order)
+                    CheckOutView(wrappedOrder: wrappedOrder)
                 }
             }
-            .disabled(order.validAddress == false)
+            .disabled(wrappedOrder.order.validAddress == false)
             
         }
         .navigationTitle("Delievery details")
         .navigationBarTitleDisplayMode(.inline)
+        
     }
+    
 }
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView(order: Order())
+//        AddressView(order: Order())
+        AddressView(wrappedOrder: WrappedOrder())
     }
 }

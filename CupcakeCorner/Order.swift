@@ -12,14 +12,13 @@ extension String {
         if self.trimmingCharacters(in: .whitespaces) == "" {
             return true
         }
-        print("Reached false")
         return false
-    
     }
 }
 
-class Order : ObservableObject, Codable {
-    
+struct Order : Codable {
+   
+    /*
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
@@ -34,15 +33,15 @@ class Order : ObservableObject, Codable {
         city = try container.decode(String.self, forKey: .city)
         zip = try container.decode(String.self, forKey: .zip)
     }
-    
+    */
+     
     init() {}
     
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Raspberry"]
     
-    @Published var type = 0
-    @Published var quantity = 3
-    
-    @Published var specialRequest = false {
+    var type = 0
+    var quantity = 3
+    var specialRequest = false {
         didSet {
             if specialRequest == false {
                 extraFrosting = false
@@ -50,14 +49,12 @@ class Order : ObservableObject, Codable {
             }
         }
     }
-    @Published var extraFrosting = false
-    @Published var sprinkles = false
-    
-    //Delivery properties
-    @Published var name = ""
-    @Published var street = ""
-    @Published var city = ""
-    @Published var zip = ""
+    var extraFrosting = false
+    var sprinkles = false
+    var name = ""
+    var street = ""
+    var city = ""
+    var zip = ""
     
      var validAddress : Bool {
          if  name.checkForSpaces() || street.allSatisfy({$0.isWhitespace}) || city.checkForSpaces() || zip.checkForSpaces() {
@@ -82,7 +79,7 @@ class Order : ObservableObject, Codable {
         
         return cost
     }
-    
+    /*
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
@@ -97,5 +94,6 @@ class Order : ObservableObject, Codable {
         try container.encode(city, forKey: .city)
         try container.encode(zip, forKey: .zip)
     }
+     */
     
 }
